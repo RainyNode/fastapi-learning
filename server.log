@@ -1,0 +1,61 @@
+INFO:     Started server process [2602592]
+INFO:     Waiting for application startup.
+2026-10-14 20:48:44,076 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-14 20:48:44,076 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("todo")
+2026-10-14 20:48:44,076 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-14 20:48:44,076 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("user")
+2026-10-14 20:48:44,076 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-10-14 20:48:44,077 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:38774 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44126 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41280 - "POST /register HTTP/1.1" 422 Unprocessable Entity
+2026-10-14 20:49:43,902 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-14 20:49:43,910 INFO sqlalchemy.engine.Engine SELECT user.id, user.username, user.hashed_password, user.email 
+FROM user 
+WHERE user.username = ?
+2026-10-14 20:49:43,910 INFO sqlalchemy.engine.Engine [generated in 0.00049s] ('result_test',)
+2026-10-14 20:49:43,912 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:41286 - "POST /login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:41288 - "POST /practice/welcome-email HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:59618 - "POST /register HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:57876 - "POST /register HTTP/1.1" 422 Unprocessable Entity
+2026-10-14 20:50:28,294 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-14 20:50:28,294 INFO sqlalchemy.engine.Engine SELECT user.id, user.username, user.hashed_password, user.email 
+FROM user 
+WHERE user.username = ?
+2026-10-14 20:50:28,294 INFO sqlalchemy.engine.Engine [cached since 44.38s ago] ('result_test',)
+2026-10-14 20:50:28,295 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:57892 - "POST /login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:45510 - "POST /practice/welcome-email HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:59492 - "POST /register HTTP/1.1" 422 Unprocessable Entity
+2026-10-14 20:51:01,539 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-14 20:51:01,539 INFO sqlalchemy.engine.Engine SELECT user.id, user.username, user.hashed_password, user.email 
+FROM user 
+WHERE user.username = ?
+2026-10-14 20:51:01,539 INFO sqlalchemy.engine.Engine [cached since 77.63s ago] ('result_test',)
+2026-10-14 20:51:01,629 INFO sqlalchemy.engine.Engine INSERT INTO user (username, hashed_password, email) VALUES (?, ?, ?)
+2026-10-14 20:51:01,629 INFO sqlalchemy.engine.Engine [generated in 0.00056s] ('result_test', '$argon2id$v=19$m=65536,t=3,p=4$/e7WAz5H2jjxwSePKREIoQ$P+t1Y8tfPQ7M3Jc99yx0NAU1qThufjWPsPbLBXvVs6U', 'result_test@qq.com')
+2026-10-14 20:51:01,631 INFO sqlalchemy.engine.Engine COMMIT
+2026-10-14 20:51:01,633 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-14 20:51:01,636 INFO sqlalchemy.engine.Engine SELECT user.id, user.username, user.hashed_password, user.email 
+FROM user 
+WHERE user.id = ?
+2026-10-14 20:51:01,636 INFO sqlalchemy.engine.Engine [generated in 0.00032s] (5,)
+INFO:     127.0.0.1:35808 - "POST /register HTTP/1.1" 201 Created
+2026-10-14 20:51:01,736 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-10-14 20:51:01,746 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-14 20:51:01,746 INFO sqlalchemy.engine.Engine SELECT user.id, user.username, user.hashed_password, user.email 
+FROM user 
+WHERE user.username = ?
+2026-10-14 20:51:01,746 INFO sqlalchemy.engine.Engine [cached since 77.84s ago] ('result_test',)
+INFO:     127.0.0.1:35822 - "POST /login HTTP/1.1" 200 OK
+2026-10-14 20:51:01,838 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-10-14 20:51:01,852 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-10-14 20:51:01,854 INFO sqlalchemy.engine.Engine SELECT user.id, user.username, user.hashed_password, user.email 
+FROM user 
+WHERE user.id = ?
+2026-10-14 20:51:01,854 INFO sqlalchemy.engine.Engine [generated in 0.00038s] (5,)
+INFO:     127.0.0.1:35834 - "POST /practice/welcome-email HTTP/1.1" 202 Accepted
+2026-10-14 20:51:01,859 INFO sqlalchemy.engine.Engine ROLLBACK

@@ -1,5 +1,5 @@
 from sqlmodel import SQLModel, Field
-
+from pydantic import EmailStr
 
 class Todo(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
@@ -23,10 +23,12 @@ class User(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
     username: str = Field(index=True, unique=True)
     hashed_password: str
+    email: str | None = Field(default=None)
 
 class UserCreate(SQLModel):
     username: str = Field(min_length=3, max_length=50)
     password: str = Field(min_length=8, max_length=128)
+    email: EmailStr
 
 
 class UserPublic(SQLModel):
